@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.mtg.org" 
+  xmlns:gm="http://www.mtg.org" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.mtg.org" elementFormDefault="qualified" 
+  xmlns:cd="mtg-card">
+  <xs:element name="game" type="gameType">
+  <!-- <8> -->
+    <xs:key name="setCodeRestriction">
+      <xs:selector xpath="gm:game/gm:block/gm:sets/gm:set"/>
+      <xs:field xpath="@code"/>
+    </xs:key>
+
+    <xs:keyref name="setCodeRestrictionKeyRef" refer="setCodeRestriction">
+      <xs:selector xpath="gm:game/gm:block/gm:sets/gm:set"/>
+      <xs:field xpath="@code"/>
+    </xs:keyref>
+    <!-- </8> -->
+  </xs:element>
+
+  <xs:complexType name="gameType">
+    <xs:sequence>
+      <xs:element ref="block" maxOccurs ="unbounded"/>
+      <xs:element name="set" maxOccurs="unbounded"/>
+    </xs:sequence>
+
+  </xs:complexType>
+  <!-- <1> -->
+
+  <xs:simpleType name="codeType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="([A-Z0-9]){3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="castingCostType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(({[WUBRGX]})+{[0-9]+})|(({([WUBRGX])})+)|({[0-9]+})"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="rarityType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Common"/>
+      <xs:enumeration value="Uncommon"/>
+      <xs:enumeration value="Rare"/>
+      <xs:enumeration value="Mythic"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="sizeType">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!-- </1> -->
+  <!-- <4> -->
+  <xs:complexType name="cardTypeSuper">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="castingCost" type="gm:castingCostType"/>
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="subType" type="xs:string"/>
+      <xs:element name="cardText" type="xs:string"/>
+      <xs:element name="illustrator" type="xs:string"/>
+      <xs:element name="rarity" type="gm:rarityType"/>
+      <!-- <7> -->
+      <xs:choice>
+        <xs:element name="Adventure" minOccurs="0" maxOccurs="1"/>
+        <xs:element name="Arcane" minOccurs="0" maxOccurs="1" />
+        <xs:element name="Trap" minOccurs="0" maxOccurs="1"/>
+      </xs:choice>
+      <!-- </7> -->
+    </xs:sequence>
+  </xs:complexType>
+  <!-- <4.1> -->
+  <xs:complexType name="cardType">
+    <xs:complexContent>
+      <xs:extension base="gm:cardTypeSuper">
+        <xs:sequence>
+          <xs:element name="flavourText" type="xs:string" minOccurs="0"/>
+          <xs:element name="power" type="xs:integer" minOccurs="0"/>
+          <xs:element name="toughness" type="xs:integer" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <!-- </4.1> -->
+
+  <!-- <4.2> -->
+  <xs:complexType name="cardTypeWRestrictions">
+    <xs:complexContent>
+      <xs:restriction base="gm:cardTypeSuper">
+        <xs:sequence>
+          <xs:element name="title" type="xs:string" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="castingCost" type="gm:castingCostType" minOccurs="1"/>
+          <xs:element name="type" type="xs:string" minOccurs="1"/>
+          <xs:element name="subType" type="xs:string" minOccurs="1"/>
+          <xs:element name="cardText" type="xs:string" minOccurs="1"/>
+          <xs:element name="illustrator" type="xs:string" minOccurs="1"/>
+          <xs:element name="rarity" type="gm:rarityType" minOccurs="1"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <!-- </4.2> -->
+  <!-- </4> -->
+
+  <!-- <2> -->
+  <!-- <xs:simpleType name="cardlist">
+    <xs:list itemType="cardType"/>
+  </xs:simpleType> -->
+  <!-- /2> -->
+
+  <!-- <3> -->
+  <xs:complexType name="setType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="name" type="xs:string"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+
+  <!-- <3.1> -->
+  <xs:complexType name="setTypeWithCodeAndSize">
+    <xs:simpleContent>
+      <xs:extension base="gm:setType">
+        <xs:attribute name="code" type="gm:codeType"/>
+        <xs:attribute name="size" type="xs:integer"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <!-- </3.1> -->
+
+  <!-- <3.2> -->
+  <xs:complexType name="setTypeWithCodeAndSizeRestricted">
+    <xs:simpleContent>
+      <xs:restriction base="gm:setTypeWithCodeAndSize">
+        <xs:attribute name="size">
+          <xs:simpleType>
+            <xs:restriction base="xs:integer">
+              <xs:minInclusive value="0"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:restriction>
+    </xs:simpleContent>
+  </xs:complexType>
+  <!-- </3.2> -->
+  <!-- </3> -->
+
+  <!-- <5> -->
+  <!-- PAAIŠKINT KLAIDĄ -->
+  <!-- <xs:simpleType name="dateSinceType">
+    <xs:restriction base="xs:date">
+      <xs:minInclusive value="1984-01-01"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="dateMaxType">
+    <xs:restriction base="gm:dateSinceType">
+      <xs:maxInclusive value="1970-01-01"/>
+    </xs:restriction>
+  </xs:simpleType> -->
+  <!-- </5> -->
+
+  <!-- <6> -->
+  <xs:element name="nonExistantSet">
+    <xs:complexType mixed="true">
+      <xs:all>
+        <xs:element name="release_date" type="xs:date"/>
+      </xs:all>
+      <xs:attribute name="code" type="gm:codeType" use="required"/>
+      <xs:attribute name="size" type="gm:sizeType"/>
+      <xs:attribute name="name" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!-- </6> -->
+  <xs:complexType name="blockType">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string" maxOccurs="1"/>
+      <xs:choice>
+        <xs:element name="sets" maxOccurs="1"/>
+        <xs:element name ="set" maxOccurs="unbounded"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="block" type="gm:blockType"/>
+
+  <!-- 
+1. Paprastas tipas, apribojantis kokį nors Schema standartinį tipą,
+2. Prasmingas sąrašo tipas (list type). Neprasmingo sąrašo tipo pavyzdys: sąrašas iš string tipo elementų. Neprasmingas todėl, kad jį galima pakeisti vienu paprastu tipu: string.
+3. Sudėtingi tipai su paprastu turiniu,
+3.1. išvesti apribojimu (restriction) iš jūsų (ne XML Schema) bazinio tipo
+3.2. išvesti praplėtimu (extension) iš jūsų bazinio tipo
+4. Sudėtingi tipai su sudėtingu turiniu,
+4.1. išvesti apribojimu (restriction) iš jūsų bazinio tipo
+4.2. išvesti praplėtimu (extension) iš jūsų bazinio tipo
+5. Pademonstruoti apribojimo principą - parodyti pavyzdį, kai apribojimo principas pažeistas, ir žinoti, kaip reikia pataisyti pavyzdį,
+6. Sudėtingas tipas su mišriu turiniu,
+7. choice valdymo struktūra,
+8. Bent viena nuoroda (keyref) į unikalumo ribojimą (unique) arba raktą (key)
+9. Visi jūsų susikurti tipai turi priklausyti jūsų vardų sričiai
+-->
+
+</xs:schema>

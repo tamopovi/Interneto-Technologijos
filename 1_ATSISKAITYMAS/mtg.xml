@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<game xmlns:bl="mtg-block" 
+    xmlns:st="mtg-sets" 
+    xmlns:cd="mtg-card">
+    <bl:block>
+        <bl:title>Mirage</bl:title>
+        <bl:sets>
+            <st:set name="Mirage" size="350" code="MIR">
+                <st:supported_languages>
+                    <st:language>English</st:language>
+                    <st:language>French</st:language>
+                    <st:language>German</st:language>
+                    <st:language>Italian</st:language>
+                    <st:language>Portuguese</st:language>
+                    <st:language>Spanish</st:language>
+                    <st:language>Japanese</st:language>
+                </st:supported_languages>
+                <st:release_date>1996-10-08</st:release_date>
+                <st:cards>
+                    <cd:card>
+                        <title>Abyssal Specter</title>
+                        <castingCost>{2}{B}{B}</castingCost>
+                        <type>Creature</type>
+                        <subType>Specter</subType>
+                        <cardText>Flying
+                        Whenever Abyssal Specter deals damage to a player, that player discards a card.</cardText>
+                        <flavourText>“Open the gates, and bid them enter.” —Lim-Dûl, the Necromancer</flavourText>
+                        <power>2</power>
+                        <toughness>3</toughness>
+                        <illustrator>Ruth Thompson</illustrator>
+                        <rarity>Uncommon</rarity>
+                    </cd:card>
+                    <cd:card>
+                        <title>Adarkar Sentinel</title>
+                        <castingCost>{5}</castingCost>
+                        <type>Artifact Creature</type>
+                        <subType>Soldier</subType>
+                        <cardText>{1}: Adarkar Sentinel gets +0/+1 until end of turn.</cardText>
+                        <flavourText>“We encountered the Sentinels in the wastes, near no living thing. Their purpose was inscrutable.” —Disa the Restless, journal entry</flavourText>
+                        <power>3</power>
+                        <toughness>3</toughness>
+                        <illustrator>Melissa A. Benson</illustrator>
+                        <rarity>Uncommon</rarity>
+                    </cd:card>
+                    <cd:card>
+                        <title>Altar of Bone</title>
+                        <castingCost>{G}{W}</castingCost>
+                        <type>Sorcery</type>
+                        <cardText>As an additional cost to cast this spell, sacrifice a creature.
+                        Search your library for a creature card, reveal that card, and put it into your hand. Then shuffle your library.</cardText>
+                        <flavourText>“We encountered the Sentinels in the wastes, near no living thing. Their purpose was inscrutable.” —Disa the Restless, journal entry</flavourText>
+                        <illustrator>Melissa A. Benson</illustrator>
+                        <rarity>Rare</rarity>
+                    </cd:card>
+                </st:cards>
+            </st:set>
+            <st:set name="Visions" size="167" code="VIS">
+                <st:supported_languages>
+                    <st:language>English</st:language>
+                    <st:language>French</st:language>
+                    <st:language>German</st:language>
+                    <st:language>Italian</st:language>
+                    <st:language>Portuguese</st:language>
+                    <st:language>Spanish</st:language>
+                    <st:language>Japanese</st:language>
+                </st:supported_languages>
+                <st:release_date>1997-02-03</st:release_date>
+                <st:cards>
+                    <cd:card>
+                        <title>Aku Djinn</title>
+                        <castingCost>{3}{B}{B}</castingCost>
+                        <type>Creature</type>
+                        <subType>Djinn</subType>
+                        <cardText>Trample
+                        At the beginning of your upkeep, put a +1/+1 counter on each creature each opponent controls.</cardText>
+                        <flavourText>“Your arrogance amazes me, Kaervek. Did you not know the price you would pay?” —Mangara</flavourText>
+                        <power>5</power>
+                        <toughness>6</toughness>
+                        <illustrator>Terese Nielsen</illustrator>
+                        <rarity>Rare</rarity>
+                    </cd:card>
+                    <cd:card>
+                        <title>Anvil of Bogardan</title>
+                        <castingCost>{2}</castingCost>
+                        <type>Artifact</type>
+                        <cardText>Players have no maximum hand size.
+                        At the beginning of each player’s draw step, that player draws an additional card, then discards a card.</cardText>
+                        <illustrator>Roger Raupp</illustrator>
+                        <rarity>Rare</rarity>
+                    </cd:card>
+                    <cd:card>
+                        <title>Coral Atoll</title>
+                        <type>Land</type>
+                        <cardText>Coral Atoll enters the battlefield tapped.
+                        When Coral Atoll enters the battlefield, sacrifice it unless you return an untapped Island you control to its owner’s hand.
+                        {T}: Add {C}{U}.</cardText>
+                        <flavourText>“We encountered the Sentinels in the wastes, near no living thing. Their purpose was inscrutable.” —Disa the Restless, journal entry</flavourText>
+                        <illustrator>John Avon</illustrator>
+                        <rarity>Uncommon</rarity>
+                    </cd:card>
+                    <cd:card>
+                        <title>Elven Cache</title>
+                        <type>Sorcery</type>
+                        <castingCost>{2}{G}{G}</castingCost>
+                        <cardText>Return target card from your graveyard to your hand.</cardText>
+                        <flavourText>“The elves can hide better than most can look.” —Mwani, Mtenda herder</flavourText>
+                        <illustrator>John Matson</illustrator>
+                        <rarity>Common</rarity>
+                    </cd:card>
+                    <cd:card>
+                        <title>Feral Instinct</title>
+                        <castingCost>{1}{G}</castingCost>
+                        <type>Instant</type>
+                        <cardText>Target creature gets +1/+1 until end of turn.
+                        Draw a card at the beginning of the next turn’s upkeep.</cardText>
+                        <flavourText>“If a rhino’s head is lower than its shoulders, trust me—it is not praying.” —Mwani, Mtenda herder</flavourText>
+                        <illustrator>Una Fricker</illustrator>
+                        <rarity>Common</rarity>
+                    </cd:card>
+                </st:cards>
+            </st:set>
+        </bl:sets>
+    </bl:block>
+    <st:set name="Unhinged" size="141" code="UNH">
+        <st:supported_languages>
+            <st:language>English</st:language>
+        </st:supported_languages>
+        <st:release_date>2004-11-20</st:release_date>
+        <st:cards>
+            <cd:card>
+                <title>Bosom Buddy</title>
+                <castingCost>{3}{W}</castingCost>
+                <type>Creature</type>
+                <subType>Elephant Townsfolk</subType>
+                <cardText>Whenever you cast a spell, you may gain 0.5 life for each word in that spell’s name.</cardText>
+                <flavourText>“Step 1: I believe in a power and toughness greater than myself … .”</flavourText>
+                <power>1</power>
+                <toughness>4</toughness>
+                <illustrator>Dan Scott</illustrator>
+                <rarity>Uncommon</rarity>
+            </cd:card>
+            <cd:card>
+                <title>Cardpecker</title>
+                <castingCost>{1}{W}</castingCost>
+                <type>Creature</type>
+                <subType>Bird</subType>
+                <cardText>Flying
+                Gotcha — If an opponent touches the table with their hand, you may say “Gotcha!” When you do, return Cardpecker from your graveyard to your hand.</cardText>
+                <power>1.5</power>
+                <toughness>1</toughness>
+                <illustrator>Richard Sardinha</illustrator>
+                <rarity>Common</rarity>
+            </cd:card>
+            <cd:card>
+                <title>First Come, First Served</title>
+                <type>Enchantment</type>
+                <castingCost>{1}{W}</castingCost>
+                <cardText>Each attacking or blocking creature with the lowest collector number among attacking or blocking creatures has first strike.</cardText>
+                <flavourText>The Yotian soldiers hoped that one day R&amp;D would make an artifact creature whose name starts with Z. And in their dreams, it’s a 4/1.</flavourText>
+                <illustrator>Thomas Gianni</illustrator>
+                <rarity>Uncommon</rarity>
+            </cd:card>
+            <cd:card>
+                <title>Gleemax</title>
+                <castingCost>{1000000}</castingCost>
+                <type>Legendary Artifact</type>
+                <cardText>You choose all targets for all spells and abilities.</cardText>
+                <flavourText>Help us … R&amp;D under mental domination of alien brain in jar … only chance … Gleemax’s blatant disregard for flavor text … send help</flavourText>
+                <illustrator>Richard Thomas</illustrator>
+                <rarity>Rare</rarity>
+            </cd:card>
+        </st:cards>
+    </st:set>
+    <bl:block>
+        <bl:title>Ixalan</bl:title>
+        <bl:sets>
+            <st:set name="Ixalan" size="279" code="XLN">
+                <st:supported_languages>
+                    <st:language>English</st:language>
+                    <st:language>Chinese Simplified</st:language>
+                    <st:language>Chinese Traditional</st:language>
+                    <st:language>French</st:language>
+                    <st:language>German</st:language>
+                    <st:language>Italian</st:language>
+                    <st:language>Korean</st:language>
+                    <st:language>Portuguese</st:language>
+                    <st:language>Russian</st:language>
+                    <st:language>Spanish</st:language>
+                    <st:language>Japanese</st:language>
+                </st:supported_languages>
+                <st:release_date>2017-09-29</st:release_date>
+                <st:cards>
+                    <cd:card>
+                        <title>Adanto Vanguard</title>
+                        <type>Creature</type>
+                        <subType>Vampire Soldier</subType>
+                        <castingCost>{1}{W}</castingCost>
+                        <cardText>As long as Adanto Vanguard is attacking, it gets +2/+0.
+                        Pay 4 life: Adanto Vanguard gains indestructible until end of turn. (Damage and effects that say “destroy” don’t destroy it.)</cardText>
+                        <illustrator>Anna Steinbauer</illustrator>
+                        <power>1</power>
+                        <toughness>1</toughness>
+                        <rarity>Uncommon</rarity>
+                    </cd:card>
+                    <cd:card>
+                        <title>Tishana, Voice of Thunder</title>
+                        <type>Legendary Creature</type>
+                        <subType>Merfolk Shaman</subType>
+                        <castingCost>{5}{G}{U}</castingCost>
+                        <cardText>Tishana, Voice of Thunder’s power and toughness are each equal to the number of cards in your hand.
+                        You have no maximum hand size.
+                        When Tishana enters the battlefield, draw a card for each creature you control.</cardText>
+                        <illustrator>Anna Steinbauer</illustrator>
+                        <power>*</power>
+                        <toughness>*</toughness>
+                        <rarity>Mythic</rarity>
+                    </cd:card>
+                </st:cards>
+            </st:set>
+            <st:set name="Rivals of Ixalan" size="196" code="RIX">
+                <st:supported_languages>
+                    <st:language>English</st:language>
+                    <st:language>Chinese Simplified</st:language>
+                    <st:language>Chinese Traditional</st:language>
+                    <st:language>French</st:language>
+                    <st:language>German</st:language>
+                    <st:language>Italian</st:language>
+                    <st:language>Korean</st:language>
+                    <st:language>Portuguese</st:language>
+                    <st:language>Russian</st:language>
+                    <st:language>Spanish</st:language>
+                    <st:language>Japanese</st:language>
+                </st:supported_languages>
+                <st:release_date>2018-01-19</st:release_date>
+                <st:cards>
+                    <cd:card>
+                        <title>Aggressive Urge</title>
+                        <type>Instant</type>
+                        <castingCost>{1}{G}</castingCost>
+                        <cardText>Target creature gets +1/+1 until end of turn.
+                        Draw a card.</cardText>
+                        <flavourText>“Our lives, our homes, and all our history are at risk. Do not speak to me of peace.”</flavourText>
+                        <illustrator>Jakub Kasper</illustrator>
+                        <rarity>Common</rarity>
+                    </cd:card>
+                </st:cards>
+            </st:set>
+        </bl:sets>
+    </bl:block>
+</game>

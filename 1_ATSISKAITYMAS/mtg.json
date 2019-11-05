@@ -1,0 +1,265 @@
+{
+  "game": {
+    "block": [
+      {
+        "title": "Mirage",
+        "sets": {
+          "set": [
+            {
+              "name": "Mirage",
+              "size": "350",
+              "code": "MIR",
+              "supported_languages": {
+                "language": [
+                  "English",
+                  "French",
+                  "German",
+                  "Italian",
+                  "Portuguese",
+                  "Spanish",
+                  "Japanese"
+                ]
+              },
+              "release_date": "1996-10-08",
+              "cards": {
+                "card": [
+                  {
+                    "title": "Abyssal Specter",
+                    "castingCost": "{2}{B}{B}",
+                    "type": "Creature",
+                    "subType": "Specter",
+                    "cardText": "Flying\nWhenever Abyssal Specter deals damage to a player, that player discards a card.",
+                    "flavourText": "“Open the gates, and bid them enter.” —Lim-Dûl, the Necromancer",
+                    "stats": "2/3",
+                    "illustrator": "Ruth Thompson",
+                    "rarity": "Uncommon"
+                  },
+                  {
+                    "title": "Adarkar Sentinel",
+                    "castingCost": "{5}",
+                    "type": "Artifact Creature",
+                    "subType": "Soldier",
+                    "cardText": "{1}: Adarkar Sentinel gets +0/+1 until end of turn.",
+                    "flavourText": "“We encountered the Sentinels in the wastes, near no living thing. Their purpose was inscrutable.” —Disa the Restless, journal entry",
+                    "stats": "3/3",
+                    "illustrator": "Melissa A. Benson",
+                    "rarity": "Uncommon"
+                  },
+                  {
+                    "title": "Altar of Bone",
+                    "castingCost": "{G}{W}",
+                    "type": "Sorcery",
+                    "cardText": "As an additional cost to cast this spell, sacrifice a creature.\nSearch your library for a creature card, reveal that card, and put it into your hand. Then shuffle your library.",
+                    "flavourText": "“We encountered the Sentinels in the wastes, near no living thing. Their purpose was inscrutable.” —Disa the Restless, journal entry",
+                    "illustrator": "Melissa A. Benson",
+                    "rarity": "Rare"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Visions",
+              "size": "167",
+              "code": "VIS",
+              "supported_languages": {
+                "language": [
+                  "English",
+                  "French",
+                  "German",
+                  "Italian",
+                  "Portuguese",
+                  "Spanish",
+                  "Japanese"
+                ]
+              },
+              "release_date": "1997-02-03",
+              "cards": {
+                "card": [
+                  {
+                    "title": "Aku Djinn",
+                    "castingCost": "{3}{B}{B}",
+                    "type": "Creature",
+                    "subType": "Djinn",
+                    "cardText": "Trample\nAt the beginning of your upkeep, put a +1/+1 counter on each creature each opponent controls.",
+                    "flavourText": "“Your arrogance amazes me, Kaervek. Did you not know the price you would pay?” —Mangara",
+                    "stats": "5/6",
+                    "illustrator": "Terese Nielsen",
+                    "rarity": "Rare"
+                  },
+                  {
+                    "title": "Anvil of Bogardan",
+                    "castingCost": "{2}",
+                    "type": "Artifact",
+                    "cardText": "Players have no maximum hand size.\nAt the beginning of each player’s draw step, that player draws an additional card, then discards a card.",
+                    "illustrator": "Roger Raupp",
+                    "rarity": "Rare"
+                  },
+                  {
+                    "title": "Coral Atoll",
+                    "type": "Land",
+                    "cardText": "Coral Atoll enters the battlefield tapped.\nWhen Coral Atoll enters the battlefield, sacrifice it unless you return an untapped Island you control to its owner’s hand.\n{T}: Add {C}{U}.",
+                    "flavourText": "“We encountered the Sentinels in the wastes, near no living thing. Their purpose was inscrutable.” —Disa the Restless, journal entry",
+                    "illustrator": "John Avon",
+                    "rarity": "Uncommon"
+                  },
+                  {
+                    "title": "Elven Cache",
+                    "type": "Sorcery",
+                    "castingCost": "{2}{G}{G}",
+                    "cardText": "Return target card from your graveyard to your hand.",
+                    "flavourText": "“The elves can hide better than most can look.” —Mwani, Mtenda herder",
+                    "illustrator": "John Matson",
+                    "rarity": "Common"
+                  },
+                  {
+                    "title": "Feral Instinct",
+                    "castingCost": "{1}{G}",
+                    "type": "Instant",
+                    "cardText": "Target creature gets +1/+1 until end of turn.\nDraw a card at the beginning of the next turn’s upkeep.",
+                    "flavourText": "“If a rhino’s head is lower than its shoulders, trust me—it is not praying.” —Mwani, Mtenda herder",
+                    "illustrator": "Una Fricker",
+                    "rarity": "Common"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "title": "Ixalan",
+        "sets": {
+          "set": [
+            {
+              "name": "Ixalan",
+              "size": "279",
+              "code": "XLN",
+              "supported_languages": {
+                "language": [
+                  "English",
+                  "Chinese Simplified",
+                  "Chinese Traditional",
+                  "French",
+                  "German",
+                  "Italian",
+                  "Korean",
+                  "Portuguese",
+                  "Russian",
+                  "Spanish",
+                  "Japanese"
+                ]
+              },
+              "release_date": "2017-09-29",
+              "cards": {
+                "card": [
+                  {
+                    "title": "Adanto Vanguard",
+                    "type": "Creature",
+                    "subType": "Vampire Soldier",
+                    "castingCost": "{1}{W}",
+                    "cardText": "As long as Adanto Vanguard is attacking, it gets +2/+0.\nPay 4 life: Adanto Vanguard gains indestructible until end of turn. (Damage and effects that say “destroy” don’t destroy it.)",
+                    "illustrator": "Anna Steinbauer",
+                    "stats": "1/1",
+                    "rarity": "Uncommon"
+                  },
+                  {
+                    "title": "Tishana, Voice of Thunder",
+                    "type": "Legendary Creature",
+                    "subType": "Merfolk Shaman",
+                    "castingCost": "{5}{G}{U}",
+                    "cardText": "Tishana, Voice of Thunder’s power and toughness are each equal to the number of cards in your hand.\nYou have no maximum hand size.\nWhen Tishana enters the battlefield, draw a card for each creature you control.",
+                    "illustrator": "Anna Steinbauer",
+                    "stats": "*/*",
+                    "rarity": "Mythic"
+                  }
+                ]
+              }
+            },
+            {
+              "name": "Rivals of Ixalan",
+              "size": "196",
+              "code": "RIX",
+              "supported_languages": {
+                "language": [
+                  "English",
+                  "Chinese Simplified",
+                  "Chinese Traditional",
+                  "French",
+                  "German",
+                  "Italian",
+                  "Korean",
+                  "Portuguese",
+                  "Russian",
+                  "Spanish",
+                  "Japanese"
+                ]
+              },
+              "release_date": "2018-01-19",
+              "cards": {
+                "card": {
+                  "title": "Aggressive Urge",
+                  "type": "Instant",
+                  "castingCost": "{1}{G}",
+                  "cardText": "Target creature gets +1/+1 until end of turn.\nDraw a card.",
+                  "flavourText": "“Our lives, our homes, and all our history are at risk. Do not speak to me of peace.”",
+                  "illustrator": "Jakub Kasper",
+                  "rarity": "Common"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "set": {
+      "name": "Unhinged",
+      "size": "141",
+      "code": "UNH",
+      "supported_languages": { "language": "English" },
+      "release_date": "2004-11-20",
+      "cards": {
+        "card": [
+          {
+            "title": "Bosom Buddy",
+            "castingCost": "{3}{W}",
+            "type": "Creature",
+            "subType": "Elephant Townsfolk",
+            "cardText": "Whenever you cast a spell, you may gain 0.5 life for each word in that spell’s name.",
+            "flavourText": "“Step 1: I believe in a power and toughness greater than myself … .”",
+            "stats": "1/4",
+            "illustrator": "Dan Scott",
+            "rarity": "Uncommon"
+          },
+          {
+            "title": "Cardpecker",
+            "castingCost": "{1}{W}",
+            "type": "Creature",
+            "subType": "Bird",
+            "cardText": "Flying\nGotcha — If an opponent touches the table with their hand, you may say “Gotcha!” When you do, return Cardpecker from your graveyard to your hand.",
+            "stats": "1.5/1",
+            "illustrator": "Richard Sardinha",
+            "rarity": "Common"
+          },
+          {
+            "title": "First Come, First Served",
+            "type": "Enchantment",
+            "castingCost": "{1}{W}",
+            "cardText": "Each attacking or blocking creature with the lowest collector number among attacking or blocking creatures has first strike.",
+            "flavourText": "The Yotian soldiers hoped that one day R&D would make an artifact creature whose name starts with Z. And in their dreams, it’s a 4/1.",
+            "illustrator": "Thomas Gianni",
+            "rarity": "Uncommon"
+          },
+          {
+            "title": "Gleemax",
+            "castingCost": "{1000000}",
+            "type": "Legendary Artifact",
+            "cardText": "You choose all targets for all spells and abilities.",
+            "flavourText": "Help us … R&D under mental domination of alien brain in jar … only chance … Gleemax’s blatant disregard for flavor text … send help",
+            "illustrator": "Richard Thomas",
+            "rarity": "Rare"
+          }
+        ]
+      }
+    }
+  }
+}

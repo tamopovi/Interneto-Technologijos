@@ -1,0 +1,107 @@
+game->block[1]->title->value
+/game/*[local-name()='block'][1]/*[local-name()='title']/text()
+
+1. Pasirinkti savo XML dokumente vieną žymę (turinčią bent vieną protėvį, ir bent vieną anūką), parašyti XPath kelią, unikaliai nueinantį prie tos žymės, ir prie to kelio prirašyti dar vieną žingsnį, naudojant šias ašis:
+1.0:
+/game/*[local-name()='block'][1]
+/game/block[1]
+
+1.1 ancestor:
+/game/*[local-name()='block'][1]/ancestor::*
+/game/block[1]/ancestor::*
+
+1.2 descendant: 
+/game/*[local-name()='block'][1]/descendant::*[local-name()='set']/@name
+/game/block[1]/descendant::set/@name
+
+1.3 following-sibling: 
+
+1.4 preceding-sibling:
+/game/block[1]/sets/set[2]/preceding-sibling::*/*
+1.5 following:
+/game/*[local-name()='block'][1]/following::*[local-name()='block']/*[local-name()='title']/text()
+/game/block[1]/following::block/title/text()
+
+1.6 preceding: 
+/game/*[local-name()='block'][2]/preceding::*[local-name()='block']/*[local-name()='title']/text()
+/game/block[2]/preceding::block/title/text()
+
+1.7 attribute: 
+/game/block[1]/descendant::set/@name
+(po vieną pavyzdį kiekvienai ašiai), mokėti paaiškinti rezultatą
+
+2.0 Parašyti XPath kelią su predikatu, kurio viduje yra panaudotas XPath kelias (pvz.: rasti visas žymes A, kurių atributas x turi tokią pačią reikšmę kaip penktos dokumente žymės B atributas y; čia A, B, x, y pakeiskite į savo dokumento žymes/atributus), paaiškinti predikato veikimo principą
+/game/descendant::set[@size > /game/block[1]/sets/set[2]/@size]/attribute::*
+
+3.1
+Funkcijas count() ir sum() (pvz., suskaičiuoti, kiek yra tam tikrų žymių/atributų, susumuoti tam tikrų žymių turinį)
+count(/descendant::set)
+/descendant::set/supported_languages[count(language) > 7]/../@name
+
+3.2
+sum(/descendant::set/attribute::size)
+
+4.Operacijas <, =, + su skirtingų tipų operandais, ir paaiškinti, kaip apliekamas automatinis tipų konvertavimas (pvz. mokėti paaiškinti, kaip apskaičiuojamas išraiškos 5 < "kuku" rezultatas).
+count(//set/cards/card/rarity[text() = 'Uncommon']) > count(//set/cards/card/rarity[text() = 'Rare'])
+count(//set/cards/card/rarity[text() = 'Uncommon']) + count(//set/cards/card/rarity[text() = 'Rare'])
+count(//set/cards/card/rarity[text() = 'Uncommon']) - count(//set/cards/card/rarity[text() = 'Rare'])
+(/game/set/cards/card/type[text() = 'Creature']/../toughness/text()) - (/game/block[1]/sets/set[1]/cards/card/type[text() = 'Creature']/../power/text())
+(/game/set/cards/card/child::type[text() = 'Creature'])[position()= last()]/../toughness/text() - (/game/block[1]/sets/set[1]/cards/card/child::type[text() = 'Creature'])[position()= last()]/../toughness/text()
+
+//contains 'Creature': 
+(/game/block[2]/sets/set[1]/cards/card/child::type[contains(text(),'Creature')])[position()= last()]/../title/text()
+
+number - '*':
+(/game/set/cards/card/child::type[text() = 'Creature'])[position()= last()]/../toughness/text() - (/game/block[2]/sets/set[1]/cards/card/child::type[contains(text(),'Creature')])[position()= last()]/../title/text()
+
+!=:
+//set != 5
+
+5.Reikia parašyti trijų žingsnių XPath išraišką (turi būti naudojamas bent vienas predikatas ir dvi skirtingos ašys) ir į atsiskaitymą atsinešti nupieštas aibes, kurios sukuriamos kiekvieno žingsnio apdorojimo rezultate
+game->all sets that contain 'Ixalan' in their name -> all card titles
+ALL CARD TITLES, which are from sets that have 'Ixalan' in their names
+('Ixalan', 'Rivals of Ixalan')
+
+/game/descendant::set:
+set
+set
+set
+set
+set
+
+/game/descendant::set[contains(@name,'Ixalan')]
+set
+set
+
+/game/descendant::set[contains(@name,'Ixalan')]/descendant::card
+card
+card
+card
+
+
+/game/descendant::set[contains(@name,'Ixalan')]/descendant::card/title/text()
+
+#text : Adanto Vanguard
+#text : Tishana, Voice of Thunder
+#text : Aggressive Urge
+
+
+6. parašyti išraišką, su operatoriumi = arba != lyginančią:
+6.1 aibę ir skaičių,
+//set != 5
+/game/descendant::set[contains(@name,'Ixalan')]/descendant::card/power = 1
+
+6.2 aibę ir eilutę,
+
+/game/descendant::set[contains(@name,'Ixalan')]/descendant::card/type = 'Instant'
+
+6.3 aibę ir loginę reikšmę,
+
+
+6.4 dvi aibes
+game/block[1]/descendant::card/rarity = game/block[2]/descendant::card/rarity
+
+bei mokėti paaiškinti visais atvejais atliekamus tipų konvertavimus
+
+7. parašyti išraišką, su operatoriais <, > lyginančią dvi aibes ir mokėti paaiškinti atliekamus automatinius tipų konvertavimus
+game/block[1]/descendant::card/toughness > game/block[2]/descendant::card/power

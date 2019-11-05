@@ -1,0 +1,395 @@
+{
+  "definitions": {
+    "rarity": {
+      "$id": "#rarity",
+      "type": "string",
+      "enum": ["Common", "Uncommon", "Rare", "Mythic"],
+      "title": "The Rarity Schema",
+      "default": "",
+      "examples": ["Uncommon"]
+    }
+  },
+  "type": "object",
+  "title": "The Root Schema",
+  "required": ["game"],
+  "properties": {
+    "game": {
+      "$id": "#/properties/game",
+      "type": "object",
+      "title": "The Game Schema",
+      "required": ["block", "set"],
+      "properties": {
+        "block": {
+          "$id": "#/properties/game/properties/block",
+          "type": "array",
+          "title": "The Block Schema",
+          "items": {
+            "$id": "#/properties/game/properties/block/items",
+            "type": "object",
+            "title": "The Items Schema",
+            "required": ["title", "sets"],
+            "properties": {
+              "title": {
+                "$id": "#/properties/game/properties/block/items/properties/title",
+                "type": "string",
+                "title": "The Title Schema",
+                "default": "",
+                "examples": ["Mirage"]
+              },
+              "sets": {
+                "$id": "#/properties/game/properties/block/items/properties/sets",
+                "type": "object",
+                "title": "The Sets Schema",
+                "required": ["set"],
+                "properties": {
+                  "set": {
+                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set",
+                    "type": "array",
+                    "title": "The Set Schema",
+                    "items": {
+                      "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items",
+                      "type": "object",
+                      "title": "The Items Schema",
+                      "required": [
+                        "name",
+                        "size",
+                        "code",
+                        "supported_languages",
+                        "release_date",
+                        "cards"
+                      ],
+                      "properties": {
+                        "name": {
+                          "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/name",
+                          "type": "string",
+                          "title": "The Name Schema",
+                          "default": "",
+                          "examples": ["Mirage"]
+                        },
+                        "size": {
+                          "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/size",
+                          "oneOf": [
+                            {
+                              "type": "string",
+                              "pattern": "^([0-9]+)$"
+                            },
+                            {
+                              "type": "integer",
+                              "minimum": 0
+                            }
+                          ],
+                          "title": "The Size Schema",
+                          "default": "",
+                          "examples": ["350"]
+                        },
+                        "code": {
+                          "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/code",
+                          "type": "string",
+                          "pattern": "^([A-Z0-9]){3}$",
+                          "title": "The Code Schema",
+                          "default": "",
+                          "examples": ["MIR"]
+                        },
+                        "supported_languages": {
+                          "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/supported_languages",
+                          "type": "object",
+                          "title": "The Supported_languages Schema",
+                          "required": ["language"],
+                          "properties": {
+                            "language": {
+                              "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/supported_languages/properties/language",
+                              "type": "array",
+                              "title": "The Language Schema",
+                              "items": {
+                                "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/supported_languages/properties/language/items",
+                                "type": "string",
+                                "title": "The Items Schema",
+                                "default": "",
+                                "examples": [
+                                  "English",
+                                  "French",
+                                  "German",
+                                  "Italian",
+                                  "Portuguese",
+                                  "Spanish",
+                                  "Japanese"
+                                ]
+                              }
+                            }
+                          }
+                        },
+                        "release_date": {
+                          "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/release_date",
+                          "type": "string",
+                          "title": "The Release_date Schema",
+                          "default": "",
+                          "examples": ["1996-10-08"],
+                          "pattern": "^(([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])))$"
+                        },
+                        "cards": {
+                          "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards",
+                          "type": "object",
+                          "title": "The Cards Schema",
+                          "required": ["card"],
+                          "properties": {
+                            "card": {
+                              "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card",
+                              "type": "array",
+                              "title": "The Card Schema",
+                              "items": {
+                                "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items",
+                                "type": "object",
+                                "title": "The Items Schema",
+                                "required": [
+                                  "title",
+                                  "type",
+                                  "cardText",
+                                  "illustrator",
+                                  "rarity"
+                                ],
+                                "properties": {
+                                  "title": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/title",
+                                    "type": "string",
+                                    "title": "The Title Schema",
+                                    "default": "",
+                                    "examples": ["Abyssal Specter"]
+                                  },
+                                  "castingCost": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/castingCost",
+                                    "type": "string",
+                                    "title": "The Castingcost Schema",
+                                    "default": "",
+                                    "examples": ["{2}{B}{B}"],
+                                    "pattern": "^(({[WUBRGX]})+{[0-9]+})|(({([WUBRGX])})+)|({[0-9]+})$"
+                                  },
+                                  "type": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/type",
+                                    "type": "string",
+                                    "title": "The Type Schema",
+                                    "default": "",
+                                    "examples": ["Creature"]
+                                  },
+                                  "subType": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/subType",
+                                    "type": "string",
+                                    "title": "The Subtype Schema",
+                                    "default": "",
+                                    "examples": ["Specter"]
+                                  },
+                                  "cardText": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/cardText",
+                                    "type": "string",
+                                    "title": "The Cardtext Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "Flying\nWhenever Abyssal Specter deals damage to a player, that player discards a card."
+                                    ]
+                                  },
+                                  "flavourText": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/flavourText",
+                                    "type": "string",
+                                    "title": "The Flavourtext Schema",
+                                    "default": "",
+                                    "examples": [
+                                      "“Open the gates, and bid them enter.” —Lim-Dûl, the Necromancer"
+                                    ]
+                                  },
+                                  "stats": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/stats",
+                                    "type": "string",
+                                    "title": "The Stats Schema",
+                                    "default": "",
+                                    "examples": ["2/3"],
+                                    "pattern": "^([0-9\\*.]+/[0-9\\*.]+)$"
+                                  },
+                                  "illustrator": {
+                                    "$id": "#/properties/game/properties/block/items/properties/sets/properties/set/items/properties/cards/properties/card/items/properties/illustrator",
+                                    "type": "string",
+                                    "title": "The Illustrator Schema",
+                                    "default": "",
+                                    "examples": ["Ruth Thompson"]
+                                  },
+                                  "rarity": {
+                                    "$ref": "#rarity"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "set": {
+          "$id": "#/properties/game/properties/set",
+          "type": "object",
+          "title": "The Set Schema",
+          "required": [
+            "name",
+            "size",
+            "code",
+            "supported_languages",
+            "release_date",
+            "cards"
+          ],
+          "properties": {
+            "name": {
+              "$id": "#/properties/game/properties/set/properties/name",
+              "type": "string",
+              "title": "The Name Schema",
+              "default": "",
+              "examples": ["Unhinged"]
+            },
+            "size": {
+              "$id": "#/properties/game/properties/set/properties/size",
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^([0-9]+)$"
+                },
+                {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              ],
+              "title": "The Size Schema",
+              "default": "",
+              "examples": ["141"],
+              "pattern": "([0-9]+)$"
+            },
+            "code": {
+              "$id": "#/properties/game/properties/set/properties/code",
+              "type": "string",
+              "pattern": "^([A-Z0-9]){3}",
+              "title": "The Code Schema",
+              "default": "",
+              "examples": ["UNH"]
+            },
+            "supported_languages": {
+              "$id": "#/properties/game/properties/set/properties/supported_languages",
+              "type": "object",
+              "title": "The Supported_languages Schema",
+              "required": ["language"],
+              "properties": {
+                "language": {
+                  "$id": "#/properties/game/properties/set/properties/supported_languages/properties/language",
+                  "type": "string",
+                  "title": "The Language Schema",
+                  "default": "",
+                  "examples": ["English"]
+                }
+              }
+            },
+            "release_date": {
+              "$id": "#/properties/game/properties/set/properties/release_date",
+              "type": "string",
+              "title": "The Release_date Schema",
+              "default": "",
+              "pattern": "^(([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])))$",
+              "examples": ["2004-11-20"]
+            },
+            "cards": {
+              "$id": "#/properties/game/properties/set/properties/cards",
+              "type": "object",
+              "title": "The Cards Schema",
+              "required": ["card"],
+              "properties": {
+                "card": {
+                  "$id": "#/properties/game/properties/set/properties/cards/properties/card",
+                  "type": "array",
+                  "title": "The Card Schema",
+                  "items": {
+                    "$id": "#/properties/game/properties/set/properties/cards/properties/card/items",
+                    "type": "object",
+                    "title": "The Items Schema",
+                    "required": [
+                      "title",
+                      "castingCost",
+                      "type",
+                      "cardText",
+                      "illustrator",
+                      "rarity"
+                    ],
+                    "properties": {
+                      "title": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/title",
+                        "type": "string",
+                        "title": "The Title Schema",
+                        "default": "",
+                        "examples": ["Bosom Buddy"]
+                      },
+                      "castingCost": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/castingCost",
+                        "type": "string",
+                        "title": "The Castingcost Schema",
+                        "default": "",
+                        "pattern": "^(({[WUBRGX]})+{[0-9]+})|(({([WUBRGX])})+)|({[0-9]+})$",
+                        "examples": ["{3}{W}"]
+                      },
+                      "type": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/type",
+                        "type": "string",
+                        "title": "The Type Schema",
+                        "default": "",
+                        "examples": ["Creature"]
+                      },
+                      "subType": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/subType",
+                        "type": "string",
+                        "title": "The Subtype Schema",
+                        "default": "",
+                        "examples": ["Elephant Townsfolk"]
+                      },
+                      "cardText": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/cardText",
+                        "type": "string",
+                        "title": "The Cardtext Schema",
+                        "default": "",
+                        "examples": [
+                          "Whenever you cast a spell, you may gain 0.5 life for each word in that spell’s name."
+                        ]
+                      },
+                      "flavourText": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/flavourText",
+                        "type": "string",
+                        "title": "The Flavourtext Schema",
+                        "default": "",
+                        "examples": [
+                          "“Step 1: I believe in a power and toughness greater than myself … .”"
+                        ]
+                      },
+                      "stats": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/stats",
+                        "type": "string",
+                        "title": "The Stats Schema",
+                        "pattern": "^([0-9\\*.]+/[0-9\\*.]+)$",
+                        "default": "",
+                        "examples": ["1/4"]
+                      },
+                      "illustrator": {
+                        "$id": "#/properties/game/properties/set/properties/cards/properties/card/items/properties/illustrator",
+                        "type": "string",
+                        "title": "The Illustrator Schema",
+                        "default": "",
+                        "examples": ["Dan Scott"]
+                      },
+                      "rarity": {
+                        "$ref": "#rarity"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
