@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<graph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <vertex name="A">
+    <DirectedEdge edgeTo="B" weight="1"/>
+    <DirectedEdge edgeTo="C" weight="1"/>
+  </vertex>
+  <vertex name="B">
+    <DirectedEdge edgeTo="C" weight="3"/>
+  </vertex>
+  <vertex name="C">
+    <DirectedEdge edgeTo="E" weight="2"/>
+  </vertex>
+  <vertex name="D">
+
+    <DirectedEdge edgeTo="C" weight="4"/>
+  </vertex>
+</graph>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<graph xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="http://www.w3.org/2001/XMLSchema MiniN9.xsd">
+  <vertex name="A">
+    <neighbourList>B C</neighbourList>
+  </vertex>
+  <vertex name="B">
+    <neighbourList>A C D</neighbourList>
+  </vertex>
+  <vertex name="C">
+    <neighbourList>A B</neighbourList>
+  </vertex>
+  <vertex name="D">
+    <neighbourList> B</neighbourList>
+  </vertex>
+</graph>

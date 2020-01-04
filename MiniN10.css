@@ -1,0 +1,18 @@
+.flex-container {
+  flex-flow: row;
+  justify-content: space-around;
+  height: -webkit-fill-available;
+}
+img.i {
+  height: 100px;
+}
+div {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .flex-container {
+    flex-flow: column;
+    justify-content: space-around;
+    display: flex;
+  }
+}

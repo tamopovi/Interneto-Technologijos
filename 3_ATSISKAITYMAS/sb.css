@@ -1,0 +1,74 @@
+html * {
+  font-family: Roboto;
+}
+
+div#header {
+  margin: 0 0 5em 0;
+  padding: 6px 0 2px 10px;
+  text-align: left;
+}
+/* descendant */
+ul li {
+  display: inline;
+}
+/* child */
+section > h2 {
+  color: grey;
+}
+/* class */
+li img.navigation {
+  height: 100px;
+}
+ul {
+  display: inline;
+  list-style-type: none;
+}
+/* id */
+.flex-container[id^="basketball"] {
+  display: flex;
+  justify-content: flex-start;
+}
+[id^="basketball-article"] {
+  max-width: 500px;
+  padding: 0px 4px;
+  color: blue;
+}
+[id^="basketball-article2"] {
+  color: red;
+}
+img {
+  max-width: 100% !important;
+}
+/* descendant */
+[id^="basketball-article"] img {
+  width: 1000px;
+}
+section {
+  flex-flow: row;
+}
+/* attr */
+.flex-container[id="content"] {
+  display: flex;
+  flex-flow: column;
+  max-width: 80%;
+}
+.flex-container[id="side"] {
+  display: flex;
+  align-items: center;
+}
+.flex-container[id="main"] {
+  display: flex;
+  flex-flow: row;
+  align-content: space-around;
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .flex-container[id*="stories"] {
+    flex-flow: column;
+    display: flex;
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
